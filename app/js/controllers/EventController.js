@@ -17,22 +17,31 @@ eventsApp.controller('EventController', function($scope) {
                 creatorName: 'Bob Smith',
                 duration: '1 hr',
                 level: 'Advanced',
-                abstract: 'In this session we will learn in and outs of directive'
+                abstract: 'In this session we will learn in and outs of directive',
+                upVoteCount: 0
             },
             {
                 name: 'Scopes for fun and profit',
                 creatorName: 'John doe',
                 duration: '30 mins',
                 level: 'Introductory',
-                abstract: 'This session will take a closer look at scopes'
+                abstract: 'This session will take a closer look at scopes',
+                upVoteCount: 0
             },
             {
                 name: 'Well Behaved Controllers',
                 creatorName: 'Jane doe',
                 duration: '2 hours',
                 level: 'Intermediate',
-                abstract: 'We will learn controllers in this'
+                abstract: 'We will learn controllers in this',
+                upVoteCount: 0
             }
         ]
-    };
+    },
+    $scope.upVoteSession = function(session) {
+        session.upVoteCount++;
+    },
+    $scope.downVoteSession = function(session) {
+        session.upVoteCount--;
+    }
 });
