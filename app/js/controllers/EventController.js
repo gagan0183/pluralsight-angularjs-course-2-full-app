@@ -1,7 +1,9 @@
 'use strict';
 
-eventsApp.controller('EventController', function($scope) {
-    $scope.event = {
+var app = angular.module('eventsApp');
+app.controller('EventController', function($scope) {
+     $scope.sortorder = 'name';
+     $scope.event = {
         name: 'Angular boot camp',
         date: '1/1/2013',
         time: '10:53 am',
